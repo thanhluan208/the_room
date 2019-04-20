@@ -35,7 +35,7 @@ table.addEventListener('click',function(e){
         console.log("hello")
         addHtml = `
             <div id="oil-lamp">
-            <img src="flame.png" alt="oil-lamp" style = "width = 50px;height = 100px">
+            <img src="flame.png" alt="oil-lamp">
             </div> 
         `
         background.insertAdjacentHTML('afterbegin', addHtml);
