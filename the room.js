@@ -39,10 +39,21 @@ table.addEventListener('click',function(e){
             </div> 
         `
         background.insertAdjacentHTML('afterbegin', addHtml);
+        var oil_lamp = document.getElementById("oil-lamp")
+        backButton1(oil_lamp)
     });
     var broken_glass = document.getElementById("broken_glass");
     broken_glass.addEventListener('click',function(e){
-        console.log("hello world");
+        addHtml = `
+        <div id="oldmessage">
+        <img src="1.jpg" alt="Old message with some clue">
+        </div>
+        `;
+        background.insertAdjacentHTML('afterbegin', addHtml);
+        var oldmessage = document.getElementById("oldmessage");
+        oldmessage.addEventListener('click', function(e) {
+            oldmessage.remove();
+        });
     });
     backButton1();
     alert("we need the light of salvation or we'll die")
@@ -128,14 +139,31 @@ box.addEventListener("click",function(e){
     })
 })
 
-function backButton1() {
+function removeElement(...argument) {
+    console.log(argument)
+    for (var i = 0; i < argument.length; i++) {
+        argument[i].remove()
+    }
+}
+
+function backButton1(par) {
     var back = document.getElementById("back");
     back.addEventListener('click', function(e){
         background.removeAttribute('class', 'scaleTable');
         back.style.display = "none";
-        bottle.remove();
-        messagebottle.remove();
-        broken_glass.remove();
+        removeElement(par)
+        // if (bottle) {
+        //     bottle.remove();
+        // }
+        // if (messagebottle) {
+        //     messagebottle.remove();
+        // }
+        // if (broken_glass) {
+        //     broken_glass.remove();
+        // }
+        // if (oil_lamp) {
+        //     oil_lamp.remove();
+        // }
     })
 }
 

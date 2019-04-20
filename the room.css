@@ -184,7 +184,19 @@ p
 #oil-lamp
 {
     position: absolute;
-    top: 10%;
-    left: 10%;
-    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-26px, -56px);
+}
+#oil-lamp > img {
+    width: 10px;
+}
+#oldmessage {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#oldmessage > img {
+    width: 150px;
 }
