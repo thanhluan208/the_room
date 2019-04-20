@@ -186,7 +186,7 @@ p
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-26px, -56px);
+    transform: translate(-261%, -309%);
 }
 #oil-lamp > img {
     width: 10px;
@@ -199,4 +199,15 @@ p
 }
 #oldmessage > img {
     width: 150px;
+}
+#findyourself
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -9%)
+}
+#findyourself > img
+{
+    width: 300px;
 }

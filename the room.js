@@ -1,7 +1,7 @@
 var table = document.getElementById("table");
 var background = document.getElementById("back-ground");
 var back = document.getElementById('back');
-var key = 0
+var hook = 0
 var match1 = 0
 // Initial:
 back.style.display = 'none';
@@ -37,10 +37,15 @@ table.addEventListener('click',function(e){
             <div id="oil-lamp">
             <img src="flame.png" alt="oil-lamp">
             </div> 
+            <div id="findyourself">
+            <img src="findyourself.jpg" alt="findyourself">
+            </div>
         `
         background.insertAdjacentHTML('afterbegin', addHtml);
         var oil_lamp = document.getElementById("oil-lamp")
         backButton1(oil_lamp)
+        var findyourself = document.getElementById("findyourself")
+        backButton1(findyourself)
     });
     var broken_glass = document.getElementById("broken_glass");
     broken_glass.addEventListener('click',function(e){
@@ -55,7 +60,7 @@ table.addEventListener('click',function(e){
             oldmessage.remove();
         });
     });
-    backButton1();
+    // backButton1();
     alert("we need the light of salvation or we'll die")
 });
 
@@ -90,8 +95,8 @@ drawers.addEventListener('click',function(e){
         var confirmPassword = "68911111";
         var password = document.getElementById("pscd").value;
         if (password == confirmPassword) {
-            var key = "1";
-            alert("you got a key!!")
+            var hook = "1";
+            alert("you got a hook!!")
             // window.location="congratulation.html";
         }
         else {
