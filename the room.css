@@ -25,10 +25,13 @@ body{
     position: absolute;
     width: 15px;
     height: 15px;
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
     top: 50%;
     left: 50%;
     transform: translate(-109px, -57px) !important;
+}
+#back > img {
+    width: 20px
 }
 
 #bottle {
