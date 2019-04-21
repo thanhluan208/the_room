@@ -206,7 +206,9 @@ door.addEventListener('click',function(){
 
 var paper = document.getElementById("papers");
 paper.addEventListener('click',function(e){
-    addHtml = ` 
+    addHtml = ` <div id="newspaper">
+    <img src="oldnewspaper.png" alt="Old newspaper with some clue">
+    </div>
     `;
     background.insertAdjacentHTML('afterbegin', addHtml);
     var newspaper = document.getElementById("newspaper");
@@ -262,16 +264,20 @@ function countdown(minutes) {
         counter.innerHTML = current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
         if( seconds > 0 ) {
             setTimeout(tick, 1000);
-        } else {
+        }
+        else {
             if(mins > 1){
-                countdown(mins-1);           
+                countdown(mins-1);    
+                console.log(mins)
             }
         }
-        if (seconds == 0 && mins == 0) {
+        if (seconds == 00 && mins == 1) {
             console.log("123");
-            window.location = "test.html";
+            window.location = "lost.html";
         }
     }
     tick();
 }
-countdown(10)
+countdown(3)
+console.log(mins)
+console.log(seconds)
