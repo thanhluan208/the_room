@@ -1,4 +1,5 @@
-
+var bag = document.getElementById("bag");
+var inventory = document.getElementById("inventory")
 var table = document.getElementById("table");
 var background = document.getElementById("back-ground");
 var back = document.getElementById('back');
@@ -8,8 +9,25 @@ var box = document.getElementById("box");
 var match1 = 0
 var z = 0
 var w = 0
+var audio = document.getElementById("myAudio")
 // Initial:
+function resetBackButton() {
+    back.style.transform =  "translate(-109px, -57px)";
+    back.children[0].style.width = "20px";
+}
+
 back.style.display = 'none';
+addHtml = `
+        <div id = "key1" style = "display:none">
+        <img src = "key.png" alt = "this is a key">
+        </div>
+        <div id = "match2" style = "display:none">
+        <img src = "RedTopSafety Matchbox.png" alt = "this is a match">
+        </div>
+        <div id = "hook1" style = "display:none">
+        <img src = "hook.png" alt = "this is a key">
+        </div>`
+        inventory.insertAdjacentHTML('afterbegin',addHtml)
 
 
 box.addEventListener("click",function(e){
@@ -20,12 +38,12 @@ box.addEventListener("click",function(e){
     `;
     background.insertAdjacentHTML('afterbegin', addHtml);
     var match = document.getElementById("match");
-    match.addEventListener('click', function(e) {
-        match.remove();
-        match1 = 1;
-        console.log(match1)
-
-    })
+    match1 = 1;
+    match2.style.display = "block"
+    back.style.display = "block";
+    back.style.transform = "translate(-600px,-300px)"
+    back.children[0].style.width = "80px"
+    backButton1(match)
 });
 
 var drawers = document.getElementById("drawers");
@@ -40,6 +58,7 @@ drawers.addEventListener('click',function(e){
     </div>
     `;
     background.insertAdjacentHTML('afterbegin', addHtml);
+    var safelock = document.getElementById("safelock")
     var unlock = document.getElementById("unlock");
     unlock.addEventListener('click', function (e) {
         var confirmPassword = "68911111";
@@ -47,44 +66,17 @@ drawers.addEventListener('click',function(e){
         if (password == confirmPassword) {
             hook = 1;
             alert("you got a hook!!,let's hook something")
-            console.log(hook)
+            hook1.style.display = "block"
         }
         else {
             alert("Wrong passcode.");
         }
-        var btn = e.target;
-        var dvi = btn.parentNode;
-        dvi.remove();
     });
-    console.log(hook)
+    back.style.display = "block";
+    back.style.transform = "translate(-600px,-300px)"
+    back.children[0].style.width = "80px"
+    backButton1(safelock)
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 table.addEventListener('click',function(e){
     back.style.display = 'block';
@@ -124,18 +116,22 @@ table.addEventListener('click',function(e){
         console.log(z)
         backButton1(nobutton)
         var messagebottle = document.getElementById("messagebottle");
-        backButton1(messagebottle);
         messagebottle.addEventListener('click', function(e) {
             messagebottle.remove();
         });
+        backButton1(messagebottle);
+
     bottle.addEventListener('click',function(e){
         if(z == 1 && hook == 1 && w == 1 ){
             alert("you found a KEY !!")
             key = 1
-            console.log(key)
+            key1.style.display = "block"
+        }
+        else
+        {
+            alert("you dont have a hook")
         }
 
-        console.log(key)
     })
     });
     var candle = document.getElementById("candle");
@@ -160,7 +156,7 @@ table.addEventListener('click',function(e){
             backButton1(findyourself)
             }
             else{
-                alert("you need matches to light the candle")
+                alert("you need match to light the candle")
             }
     });
     var broken_glass = document.getElementById("broken_glass");
@@ -175,13 +171,16 @@ table.addEventListener('click',function(e){
         oldmessage.addEventListener('click', function(e) {
             oldmessage.remove();
         });
+        backButton1(oldmessage)
     });
     backButton1();
     alert("we need the light of salvation or we'll die")
 });
 
 var mirror = document.getElementById("mirror");
+var audio2 = document.getElementById("audio2")
 mirror.addEventListener('click',function(e){
+    audio.pause()
     addHtml =  `
     <div id= "msg">
     <p>Put the newspaper in front of the mirror.</p>
@@ -190,8 +189,9 @@ mirror.addEventListener('click',function(e){
     `;
     background.insertAdjacentHTML('afterbegin', addHtml);
     var msg = document.getElementById("msg");
-    back.style.display = "block";
     background.setAttribute('class',"scaleMirror");
+    back.style.display = "block";
+    audio2.play()
     backButton()
 });
 var door = document.getElementById("door");
@@ -212,9 +212,10 @@ paper.addEventListener('click',function(e){
     `;
     background.insertAdjacentHTML('afterbegin', addHtml);
     var newspaper = document.getElementById("newspaper");
-    newspaper.addEventListener('click', function(e) {
-        newspaper.remove();
-    })
+    back.style.display = "block";
+    back.style.transform = "translate(-600px,-300px)"
+    back.children[0].style.width = "80px"
+    backButton1(newspaper)
 })
 
 function removeElement(...argument) {
@@ -229,6 +230,7 @@ function backButton1(par) {
     back.addEventListener('click', function(e){
         background.removeAttribute('class', 'scaleTable');
         back.style.display = "none";
+        resetBackButton();
         removeElement(par)
         // if (bottle) {
         //     bottle.remove();
@@ -251,6 +253,8 @@ function backButton() {
         background.removeAttribute('class', 'scaleTable');
         back.style.display = "none";
         msg.remove();
+        audio2.pause()
+        audio.play()
     })
 }
 function countdown(minutes) {
@@ -278,6 +282,19 @@ function countdown(minutes) {
     }
     tick();
 }
-countdown(3)
-console.log(mins)
-console.log(seconds)
+countdown(10)
+// // console.log(mins)
+// console.log(seconds)
+// console.log(bag)
+bag.addEventListener('click',function(e){
+    var stateInventory = inventory.style.display;
+    if (stateInventory == 'none') {
+        inventory.style.display = "flex"
+        
+    }
+    else 
+    {
+        inventory.style.display = "none"
+    }
+    
+})

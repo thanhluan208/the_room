@@ -1,8 +1,20 @@
+audio
+{
+    position: absolute;
+    width: 0px;
+    height: 0px;
+}
+
+
+
 body{
     padding: 0;
     margin:0;
     overflow: hidden;
  }
+ /* * {
+    font-family: 'Nothing You Could Do', cursive;
+ } */
 #back-ground{
     background: url('theroom.jpg');
     background-repeat: no-repeat;
@@ -28,10 +40,24 @@ body{
     /* background-color: blueviolet; */
     top: 50%;
     left: 50%;
-    transform: translate(-109px, -57px) !important;
+    transform: translate(-109px, -57px);
 }
 #back > img {
     width: 20px
+}
+#bag
+{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: 50%;
+    left: 50%;
+    transform: translate(660%,320%);
+}
+#bag > img 
+{
+    width: 70px;
+    bottom: 10%;
 }
 
 #bottle {
@@ -69,7 +95,8 @@ p
     top: 50%;
     right: 35%;
     font-family: 'Nosifer' , cursive;
-    font-size: 9px;
+    font-size: 6px;
+    font-weight: 100
 }
 #msg1
 {
@@ -77,7 +104,8 @@ p
     top: 55%;
     right:35%;
     font-family: "Nosifer", cursive;
-    font-size: 9px;
+    font-size: 6px;
+    font-weight: 100;
     color:red;
 }
 
@@ -142,7 +170,11 @@ p
     transform: translate(-50%, -50%);
     background-color: black;
     color: red;
-    font-family: montserrat;
+    align-content: center;
+    font-size: 10px;
+    font-family: 'Nosifer', cursive;
+    box-shadow: 0px 2px 4px #cccccc;
+    border-radius: 5px;
 }
 
 #safelock {
@@ -151,9 +183,12 @@ p
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: black;
-    color: red;
-    font-family: montserrat;
+    color:#ea4a15;
     font-size: 200%;
+    padding: 10px;
+    box-shadow: 0px 2px 4px #cccccc;
+    font-family: 'Nothing You Could Do', cursive;
+    border-radius: 5px;
 }
 #candle {
     position: absolute;
@@ -178,11 +213,11 @@ p
     position: absolute;
     width: 100px;
     height: 100px;
-    top: 10%;
-    left :50%;
+    top: 5%;
+    left :90%;
     font-size: 50px;
-    color: red;
-    
+    color: #f9d301;
+    font-family: 'Poller One', cursive;
 }
 #oil-lamp
 {
@@ -213,4 +248,43 @@ p
 #findyourself > img
 {
     width: 300px;
+}
+#inventory
+{
+    position: absolute;
+    width: 400px;
+    height: 100px;
+    background-color: rgb(105, 104, 105);
+    box-shadow: 0px 2px 4px #000000;
+    border-radius: 5px;
+    bottom: 2%;
+    right: 15%;
+    justify-content: space-around;
+    align-items: center;
+}
+#key1
+{
+    bottom: 0
+}
+#key1 > img
+{
+    width: 50px;
+}
+#match2
+{
+    bottom: 0;
+    right: 18%;
+}
+#match2 > img
+{
+    width: 80px;
+}
+#hook1{
+
+    bottom: 0;
+    right: 15%;
+}
+#hook1 > img
+{
+    width: 40px;
 }

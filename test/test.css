@@ -1,0 +1,41 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(#fff 0%, #fff 50%, #42a8f9 50%, #42a8f9 100%)   
+}
+.navigation 
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    padding: 40px;
+    transition: 0.5s;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, .2);
+    /* top: 50%;
+    right: 50%;
+    transform: translate(400%,180%) */
+}
+.menu
+{
+    margin: 0;
+    padding: 0;
+    width: 0;
+    overflow: hidden;
+    display: flex;
+    transform: 0.5s;
+    transition: 1s;
+}
+.navigation input:checked ~ .menu
+{
+    width: 400px;
+    transition: 1s;
+}
