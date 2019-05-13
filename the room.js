@@ -298,3 +298,4 @@ bag.addEventListener('click',function(e){
     }
     
 })
+window.resizeTo(1366,768);
