@@ -96,7 +96,8 @@ p
     right: 35%;
     font-family: 'Nosifer' , cursive;
     font-size: 6px;
-    font-weight: 100
+    font-weight: 100;
+    color: red
 }
 #msg1
 {
