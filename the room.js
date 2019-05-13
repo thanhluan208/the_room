@@ -1,3 +1,4 @@
+window.resizeTo(1366,768);
 var bag = document.getElementById("bag");
 var inventory = document.getElementById("inventory")
 var table = document.getElementById("table");
@@ -298,4 +299,3 @@ bag.addEventListener('click',function(e){
     }
     
 })
-window.resizeTo(1366,768);
