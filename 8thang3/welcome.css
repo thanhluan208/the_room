@@ -1,4 +1,4 @@
-body
+/* body
 {
     margin: 0;
     padding: 0;
@@ -8,19 +8,23 @@ body
     min-height: 100vh;
     background: #031321;
     font-family: consolas;
-}
+} */
 a
 {
-    position: relative;
+    position: absolute;
     display: inline-block;
     padding: 15px 30px;
     color: #2196f3;
     text-transform: uppercase;
     letter-spacing: 4px;
     text-decoration: none;
-    font-size: 24px;
+    font-size:36px;
     overflow: hidden;
     transition: 0.2s;
+    transform: translate(-15%,70%);
+    top: 67%;
+    left: 39%;
+    animation: animate 3s linear forwards;
 }
 a:hover
 {
